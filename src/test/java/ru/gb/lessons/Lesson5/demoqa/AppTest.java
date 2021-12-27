@@ -22,7 +22,7 @@ public class AppTest extends BasicTest {
         driver.findElement(By.id("password")).sendKeys("Deepmix1987@");
         driver.findElement(By.id("login")).click();
 
-        driver.findElement(By.cssSelector("div:nth-child(2) > span > div > div.header-text > span > svg")).click();
+        driver.findElement(By.xpath("//*[text()=\"Forms\"]")).click();
         driver.findElement(By.xpath("//span[text()=\"Practice Form\"]")).click();
 
         driver.findElement(By.id("firstName")).sendKeys("Alexandr");

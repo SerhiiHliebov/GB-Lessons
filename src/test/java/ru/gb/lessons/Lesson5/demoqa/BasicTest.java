@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BasicTest {
 
-    WebDriver driver;
-    WebDriverWait webDriverWait;
-    String url = "https://demoqa.com/login";
+    public WebDriver driver;
+    public WebDriverWait webDriverWait;
+    public String url = "https://demoqa.com/login";
 
     @BeforeEach
     void setUp() {

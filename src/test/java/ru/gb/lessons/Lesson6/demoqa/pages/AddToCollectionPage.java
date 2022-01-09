@@ -1,5 +1,6 @@
 package ru.gb.lessons.Lesson6.demoqa.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,7 @@ public class AddToCollectionPage extends BaseView{
     public AddToCollectionPage(WebDriver driver) {
         super(driver);
     }
-
+    @Step("Кликнуть на кнопку добавить в коллекцию")
     public void clickAddToYourCollectionButton() {
 
         WebElement element = driver.findElement(By.xpath("//*[text()=\"Add To Your Collection\"]"));

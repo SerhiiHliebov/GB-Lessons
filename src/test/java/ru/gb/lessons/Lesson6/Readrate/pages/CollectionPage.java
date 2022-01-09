@@ -1,5 +1,6 @@
 package ru.gb.lessons.Lesson6.Readrate.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ public class CollectionPage extends BaseView{
     public CollectionPage(WebDriver driver) {
         super(driver);
     }
-
+    @Step("Кликнуть на кнопку коллекции")
     public CollectionPage clickToCollectionButton() {
 
         try {
@@ -26,13 +27,13 @@ public class CollectionPage extends BaseView{
         return new CollectionPage(driver);
 
     }
-
+    @Step("Кликнуть на кнопку создать коллекцию")
     public CollectionPage clickToCreateCollectionButton() {
 
         driver.findElement(By.xpath("//*[@class=\"btn btn-block btn-pb btn-primary\"]")).click();
         return new CollectionPage(driver);
     }
-
+    @Step("Имя и категория коллекции")
     public CollectionPage CollectionCategoriesAndNameCollection() {
 
         driver.findElement(By.xpath("//*[text()=\"Найти или добавить категорию\"]")).click();
@@ -45,7 +46,7 @@ public class CollectionPage extends BaseView{
         driver.findElement(By.xpath("//*[@class=\"btn btn-pb btn-primary hide\"]")).click();
         return new CollectionPage(driver);
     }
-
+    @Step("Создать коллекцию")
     public Checks createCollectionButton() {
 
         new WebDriverWait(driver,5,500).

@@ -36,7 +36,7 @@ public class AddbookTest extends BasicTest {
         driver.get("https://demoqa.com/books");
         driver.findElement(By.id("searchBox")).sendKeys("Eric Elliott");
 
-        WebElement book = driver.findElement(By.id("searchBox"));
-        assertThat(book).descriptionText();
+        WebElement book = driver.findElement(By.xpath("//*[text()=\"Eric Elliott\"]"));
+        assertThat(book.getText()).isEqualTo("Eric Elliott");
     }
 }

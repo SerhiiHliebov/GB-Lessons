@@ -1,17 +1,19 @@
 package ru.gb.lessons.Lesson6.demoqa.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PracticeFormPage extends BaseView{
 
     public PracticeFormPage(WebDriver driver) {
         super(driver);
     }
-
+    @Step("Заполнить форму")
     public PracticeFormPage FillStudentRegistrationForm() {
 
         driver.findElement(By.id("firstName")).sendKeys("Alexandr");
@@ -28,11 +30,12 @@ public class PracticeFormPage extends BaseView{
         return new PracticeFormPage(driver);
 
     }
-
+    @Step("Кликнуть на кнопку Submit")
     public void clickSubmitButton(String name) {
 
         driver.findElement(By.xpath("//button[@id=\"submit\"]")).click();
-        assertEquals(name, "Thanks for submitting the form");
+        WebElement text = driver.findElement(By.xpath("//*[text()=\"Thanks for submitting the form\"]"));
+        assertThat(text.getText()).isEqualTo("Thanks for submitting the form");
 
     }
 }
